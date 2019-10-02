@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 const router = require('./router');
 
 const app = express();
@@ -18,6 +19,9 @@ mongoose.connect(dbUrl, dbConfig);
 
 app.use(cors());
 app.use(express.json());
+app.use('/files', express.static(path.resolve(
+  __dirname, "..", "uploads"
+)));
 app.use(router);
 
 app.listen(3333, () => {
