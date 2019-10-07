@@ -62,10 +62,10 @@ export default function Spot({ history }) {
         onChange={e => setTechs(e.target.value)}
       />
 
-      <label htmlFor="price">Dayly charges</label>
+      <label htmlFor="price">Daily charges</label>
       <input 
         id="price"
-        placeholder="Value charged by day"
+        placeholder="Value charged per day"
         value={price}
         onChange={e => setPrice(e.target.value)}
       />
